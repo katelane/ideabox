@@ -1,0 +1,112 @@
+---
+ideas:
+- title: Frankenstein Fingers
+  description: Finger breadsticks with lightning dipping sauce
+  category: appetizer
+  tags:
+  - bread
+  - nuts
+  - spicy
+  - dip
+  images: frankenfingers.jpg
+- title: Strawberry Bloodbath
+  description: Iced strawberry sponge cake dripping with blood
+  category: dessert
+  tags:
+  - strawberry
+  - fruit
+  images: strawberrysponge.jpg
+- title: Zombie Guts
+  description: Potato hash with undead chutney
+  category: side dish
+  tags:
+  - vegetable
+  - potato
+  - jam
+  - peppers
+  images: potatohash.jpg
+- title: Werewolf Toenail Clippings
+  description: Fried plantain chips
+  category: appetizer
+  tags:
+  - fruit
+  images: werewolftoenails.jpg
+- title: Mummy wrapped meatballs
+  description: Seasoned meatballs wrapped in dough bandages
+  category: appetizer
+  tags:
+  - beef
+  - bread
+  - pork
+  - meat
+  images: mummymeatballs.png
+- title: Haunted Ham
+  description: Fresh meat glazed with ooze
+  category: main dish
+  tags:
+  - meat
+  - ham
+  images: ham.jpg
+- title: Zombie brain cake
+  description: Fruity cake crowned with a gelatinous brain
+  category: dessert
+  tags:
+  - jello
+  - fruit
+  - cake
+  images: braincake.jpg
+- title: Enchanted Forest
+  description: Yeah... it's broccoli.
+  category: side dish
+  tags:
+  - vegetable
+  - broccoli
+  images: broccoliforest.jpg
+- title: Fright bites
+  description: Oozey gooey mini cheddar handhelds
+  category: appetizer
+  tags:
+  - bread
+  - cheese
+  images: cheddarbites.jpg
+- title: Human remains
+  description: Vegetarian tofu scramble
+  category: main dish
+  tags:
+  - tofu
+  - vegetable
+  - peppers
+  - potato
+  - vegetarian
+  images: tofuscramble.jpg
+- title: Paranormal punch
+  description: Ghoulish green midori punch
+  category: beverage
+  tags:
+  - alcohol
+  - fruit
+  images: paranormalpunch.jpg
+- title: Candy corn cups
+  description: Pudding parfaits
+  category: dessert
+  tags:
+  - pudding
+  - candy
+  images: candycornpudding.jpg
+- title: Eight Legged Eats
+  description: Spider donuts that might scuttle away if you don't eat them up!
+  category: dessert
+  tags:
+  - donuts
+  - candy
+  images: spiderdonuts.jpg
+- title: Witch's Brew
+  description: Sangria that can see you.
+  category: beverage
+  tags:
+  - alcohol
+  - fruit
+  - oranges
+  - wine
+  - eyeballs
+  images: iseeyousangria.jpg

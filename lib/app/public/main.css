@@ -1,0 +1,83 @@
+
+html, body {
+  padding: 5;
+  margin: 0;
+}
+body {
+  background: #FF8C00;
+  background-image: url(../images/corner.jpg);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 20%;
+  font-family: 'Trebuchet MS, Helvetica', sans-serif;
+}
+
+a {
+  color: #556B2F;
+  text-decoration: none;
+}
+  a:hover, a:focus {
+    color: #FF8C00;
+  }
+
+h1 {
+  color: #000;
+  /*border-bottom: 2px solid #000;*/
+  -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+  animation: mymove 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    50% {text-shadow: 10px 20px 30px #fff;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    50% {text-shadow: 10px 20px 30px #fff;}
+}
+
+h3 {
+  color: #000;
+  font-size: 1.2 em;
+}
+
+ul li {
+    list-style-position: inside;
+    float: left;
+    list-style-image: url(../images/icon_pumpkin.gif);
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 14px;
+    width: 40%;
+    background-color: #fff;
+    color: #000;
+    border: 5px solid;
+    border-color: #FF8C00;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 2px;
+   }
+
+.title {
+  color: #A0522D;
+  font-size: 150%;
+  text-transform: uppercase;
+
+}
+
+.category {
+  color: #A0522D;
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+.tags {
+  font-size: 70%;
+  text-transform: uppercase;
+}
+
+.note {
+  font-style: italic;
+  font-size: 80%;
+}
