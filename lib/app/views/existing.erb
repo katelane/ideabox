@@ -1,0 +1,23 @@
+<div>
+    <h3>Existing Recipe Ideas</h3>
+      <ul>
+      <% ideas.each do |idea| %>
+          <p><li><span class="title"><%= idea.title %></span></p>
+          <p><%= idea.description %></p>
+          <p><img src='/uploads/<%=idea.image%>' height=239px width=239px/></p>
+          <p><span class ="category"><%= idea.category %></span></p>
+          <p><span class ="tags">Tags: <% idea.tags.each do |tag| %>
+            <a href="/?tag=<%= tag %>"><%= tag %></a>
+            <% end %></span></p>
+          <p><a href="/<%= idea.id %>/edit"><span class="note">edit this idea</span></a></p>
+          <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+            <input type='submit' value="Like +"/>
+          </form>
+          <form action="/<%= idea.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete"/>
+          </form>
+        </li>
+      <% end %>
+      </ul>
+</div>

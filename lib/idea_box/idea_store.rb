@@ -68,4 +68,8 @@ class IdeaStore
     end
   end
 
+  def self.filter_by(tag)
+    all.select { |idea| idea.tags.include?(tag) }
+  end
+
 end

@@ -2,7 +2,7 @@ require 'yaml/store'
 
 class Idea
   include Comparable
-  attr_reader :title, :description, :rank, :id, :tags, :category, :images
+  attr_reader :title, :description, :rank, :id, :tags, :category, :image
 
   def initialize(attributes = {})
     @title = attributes["title"]
@@ -11,7 +11,7 @@ class Idea
     @id = attributes["id"]
     @tags = attributes["tags"]
     @category = attributes["category"]
-    @images = attributes["images"]
+    @image = attributes["image"]
   end
 
   def save
@@ -24,7 +24,8 @@ class Idea
       "description" => description,
       "rank" => rank,
       "tags" => tags,
-      "category" => category
+      "category" => category,
+      "image" => image
     }
   end
 
@@ -39,11 +40,5 @@ class Idea
   def <=>(other)
     other.rank <=> rank
   end
-
-  def self.format_tags(tags)
-    tags.to_s.split(',')
-    # tags.to_s.split(',').map(&:strip)
-  end
-
 
 end

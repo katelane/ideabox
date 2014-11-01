@@ -16,11 +16,13 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/' do
-    # if there is a tag thing
-    #   ideas = tag selection, etc.(tag)
-    # else
-    ideas = IdeaStore.all.sort
-    erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new(params)}
+    if params["tag"]
+      tag = params["tag"]
+      ideas = IdeaStore.filter_by(tag)
+    else
+      ideas = IdeaStore.all.sort
+    end
+    erb :index, locals: {ideas: ideas}
   end
 
   def clean_tags(idea_tags)
@@ -29,11 +31,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   post '/' do
-    uploader = ImageUploader.new
-      uploader.store!(params['idea']['image'])
-      params['idea']['images'] = params['idea']['image'][:filename]
-      params[:idea]['images'] = params['idea']['image'][:filename]
-      params_without_image = params['idea'].delete('image')
+    image_handler
     clean_tags params[:idea]
     IdeaStore.create(params[:idea])
     redirect '/'
@@ -50,25 +48,35 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   put '/:id' do |id|
-    # if the params for image 'value' == idea.images
-    #  then don't bother trying to upload an image because there isn't one
-    #  you might need to clean up the params by running: params_without_image = params['idea'].delete('image')
-    # else do the stuff below
-    uploader = ImageUploader.new
-      uploader.store!(params['idea']['image'])
-      params['idea']['images'] = params['idea']['image'][:filename]
-      params[:idea]['images'] = params['idea']['image'][:filename]
-      params_without_image = params['idea'].delete('image')
+    image_handler
     clean_tags params[:idea]
     IdeaStore.update(id.to_i, params[:idea])
     redirect '/'
   end
+
+  #Horace's magic
+    # idea_params = params["idea"]
+    #  if params["idea"]["image"]
+    #    ImageUploader.new.store!(params['idea']['image'])
+    #    filename = params['idea']['image'][:filename]
+    #    idea_params.merge!({"image" => filename})
+    #  end
+    #  IdeaStore.update(id.to_i, idea_params)
 
   post '/:id/like' do |id|
     idea = IdeaStore.find(id.to_i)
     idea.like!
     IdeaStore.update(id.to_i, idea.to_h)
     redirect '/'
+  end
+
+  def image_handler
+    idea_params = params["idea"]
+      if params["idea"]["image"]
+        ImageUploader.new.store!(params['idea']['image'])
+        filename = params['idea']['image'][:filename]
+        idea_params.merge!({"image" => filename})
+      end
   end
 
 end

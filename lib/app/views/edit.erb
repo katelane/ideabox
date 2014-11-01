@@ -1,3 +1,4 @@
+    <div>
     <h1>IdeaBox</h1>
 
     <form action="/<%= idea.id %>" method="POST" enctype='multipart/form-data'>
@@ -8,13 +9,15 @@
         Your Idea:
         <% end %>
       </p>
-        <% if idea.id %>
+      <p><% if idea.id %>
           <input type="hidden" name="_method" value="PUT" />
         <% end %>
       <input type='text' name='idea[title]' value="<%= idea.title %>"/><br/>
       <textarea name='idea[description]'><%= idea.description %></textarea><br/>
       <input type='text' name='idea[category]' value="<%= idea.category %>"/><br/>
       <input type='text' name='idea[tags]' value="<%= idea.tags.join(' ') %>" /><br/>
-      <input type='file' name='idea[image]' value="<%= idea.images %>" /><br/>
+      <input type='file' name='idea[image]' value="<%= idea.image %>" /><br/>
       <input type='submit'/>
+      </p>
     </form>
+    </div>
